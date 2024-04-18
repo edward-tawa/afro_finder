@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+
+{% block navigation %}
+    {{super()}}
+{% endblock %}
+
+{% block body%}
+    <div class="container text-center">
+        <img src="{{ url_for('static', filename='images/about.jpg') }}" class="img-fluid"  alt=""> 
+    </div>
+
+    <div class="container mt-4">
+        <div class="row justify-content-between">
+            <p class="col-md-3">
+                <span class="ms-0 display-6">Afrofinder</span><br>
+                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Minima, molestiae? Similique impedit magni, quo hic, alias minima sequi in iure, illo harum sit temporibus quia enim tempora eaque rem quas!
+            </p>
+            <p class="col-md-3">
+                <span class="ms-0 display-6">Vision</span><br>
+                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Minima, molestiae? Similique impedit magni, quo hic, alias minima sequi in iure, illo harum sit temporibus quia enim tempora eaque rem quas!
+            </p>
+            <p class="col-md-3">
+                <span class="ms-0 display-6">Mission</span><br>
+                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Minima, molestiae? Similique impedit magni, quo hic, alias minima sequi in iure, illo harum sit temporibus quia enim tempora eaque rem quas!
+
+                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Reprehenderit numquam fuga facere dolor pariatur ratione natus qui dolore voluptas ea, saepe totam, dicta voluptate commodi aliquid fugit obcaecati culpa? Facere?
+            </p>
+        </div>
+    </div>
+{% endblock %}
+
+{% block footer %}
+    {{super()}}
+{% endblock %}

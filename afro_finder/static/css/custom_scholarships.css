@@ -1,0 +1,28 @@
+.container{
+    /*padding-top: 30px;
+    */
+    padding-top: 3.5rem;
+}
+
+a{
+    text-decoration: none;
+    color: black;
+}
+
+a:hover{
+    color: black;
+    text-decoration: underline;
+    display: block;
+
+}
+
+.afrolink:hover{
+    color: white;
+    background-color: black;
+    text-decoration: none;
+    
+}
+
+.btn:hover{
+    background-color: gold;
+}

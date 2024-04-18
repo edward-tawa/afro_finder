@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="../static/css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="../static/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="{{url_for('static', filename='css/custom_scholarships.css')}}">
+
+
+   
+    <title>Document</title>
+</head>
+<body>
+    {% block navigation%}
+    <nav class="navbar navbar-expand-md navbar-light bg-primary fixed-top">
+        <div class="container-xxl">
+            <a href="#" class="navbar-brand"><span class="navbar-brand">Afrofinder</span></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#main-nav" aria-controls="main-nav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-center align-items-center" id="main-nav">
+            <ul class="navbar-nav">
+
+                <li class="nav-item">
+                    <a class="nav-link fs-4" href="home">Home</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link fs-4" href="scholarships">Scholarships</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link fs-4" href="about_us">About Us</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link fs-4" href="blog">Blog</a>
+                </li>
+            </ul>
+
+            </div>
+        </div>
+    </nav>
+
+    {% endblock %}
+
+    <div class="container">
+            <table class="table table-borderless ms-5">
+                <thead>
+                <!--  <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">First</th>
+                    <th scope="col">Last</th>
+                    <th scope="col">Handle</th>
+                  </tr>-->
+                </thead>
+                <tbody>
+                    {% for i in range(0, scholarship|length-4, 3) %}
+                  <tr>
+                    
+                    <td>
+                        
+                        <div class="card btn" id="btn" style="width: 18rem; height: 13rem; margin-top: 7rem;" >
+                           
+                            <div class="card-body">
+                               
+                            <div class="card-title">{{  scholarship[i].name }}</div>
+                            <div class="card-subtitle"></div>
+                            <p class="card-text">Deadline Date: {{ scholarship[i].deadline }}</p>
+                            <a href="{{ scholarship[i+1].about }}" class="card-link">application link</a>
+
+                            </div>
+                        
+                        </div>
+                    
+                    </td>
+                
+
+                    <td>
+                        
+                        <div class="card btn" style="width: 18rem; height: 13rem; margin-top: 7rem;">
+                            <div class="card-body">
+                            <div class="card-title">{{  scholarship[i+1].name }}</div>
+                            <div class="card-subtitle"></div>
+                            <p class="card-text">Deadline Date: {{ scholarship[i+1].deadline }}</p>
+                            <a href="{{ scholarship[i+1].about }}" class="card-link" id="card-link">application link</a>
+                            </div>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="card btn" style="width: 18rem; height: 13rem; margin-top: 7rem;">
+                            <div class="card-body">
+                            <div class="card-title">{{  scholarship[i+2].name }}</div>
+                            <div class="card-subtitle"></div>
+                            <p class="card-text">Deadline Date: {{ scholarship[i+2].deadline }}</p>
+                            <a href= "{{ scholarship[i+2].about }}" class="card-link">application link</a>
+                        </div>
+                    </td>
+                  </tr>
+                  {% endfor %}  
+
+                
+                </tbody>
+              </table>
+            
+
+          
+   
+            <!--
+            <div class="card ms-5" style="width: 18rem; margin-top: 7rem;">
+                <div class="card-body">
+                    <div class="card-title">Scholarshipname</div>
+                    <div class="card-subtitle"></div>
+                    <p class="card-text">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dignissimos reprehenderit, odio recusandae, labore nostrum odit excepturi sunt debitis tempora incidunt facilis nulla officiis quaerat?.</p>
+                    <a href="#" class="card-link">application link</a>
+                </div>
+            </div>
+
+            <div class="card ms-5" style="width: 18rem; margin-top: 7rem;">
+                <div class="card-body">
+                    <div class="card-title">Scholarshipname</div>
+                    <div class="card-subtitle"></div>
+                    <p class="card-text">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dignissimos reprehenderit, odio recusandae, labore nostrum odit excepturi sunt debitis tempora incidunt facilis nulla officiis quaerat?.</p>
+                    <a href="#" class="card-link">application link</a>
+                </div>
+            </div>
+        </div>
+        
+        
+
+        <div class="row justify-content-center">
+            <div class="card" style="width: 18rem; margin-top: 7rem;">
+                <div class="card-body">
+                    <div class="card-title">Scholarshipname</div>
+                    <div class="card-subtitle"></div>
+                    <p class="card-text">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dignissimos reprehenderit, odio recusandae, labore nostrum odit excepturi sunt debitis tempora incidunt facilis nulla officiis quaerat?.</p>
+                    <a href="#" class="card-link">application link</a>
+                </div>
+            </div>
+
+            <div class="card ms-5" style="width: 18rem; margin-top: 7rem;">
+                <div class="card-body">
+                    <div class="card-title">Scholarshipname</div>
+                    <div class="card-subtitle"></div>
+                    <p class="card-text">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dignissimos reprehenderit, odio recusandae, labore nostrum odit excepturi sunt debitis tempora incidunt facilis nulla officiis quaerat?.</p>
+                    <a href="#" class="card-link">application link</a>
+                </div>
+            </div>
+
+            <div class="card ms-5" style="width: 18rem; margin-top: 7rem;">
+                <div class="card-body">
+                    <div class="card-title">Scholarshipname</div>
+                    <div class="card-subtitle"></div>
+                    <p class="card-text">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dignissimos reprehenderit, odio recusandae, labore nostrum odit excepturi sunt debitis tempora incidunt facilis nulla officiis quaerat?.</p>
+                    <a href="#" class="card-link">application link</a>
+                </div>
+            </div>
+        </div>
+
+
+
+        <div class="row justify-content-center">
+            <div class="card" style="width: 18rem; margin-top: 7rem;">
+                <div class="card-body">
+                    <div class="card-title">Scholarshipname</div>
+                    <div class="card-subtitle"></div>
+                    <p class="card-text">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dignissimos reprehenderit, odio recusandae, labore nostrum odit excepturi sunt debitis tempora incidunt facilis nulla officiis quaerat?.</p>
+                    <a href="#" class="card-link">application link</a>
+                </div>
+            </div>
+
+            <div class="card ms-5" style="width: 18rem; margin-top: 7rem;">
+                <div class="card-body">
+                    <div class="card-title">Scholarshipname</div>
+                    <div class="card-subtitle"></div>
+                    <p class="card-text">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dignissimos reprehenderit, odio recusandae, labore nostrum odit excepturi sunt debitis tempora incidunt facilis nulla officiis quaerat?.</p>
+                    <a href="#" class="card-link">application link</a>
+                </div>
+            </div>
+
+            <div class="card ms-5" style="width: 18rem; margin-top: 7rem;">
+                <div class="card-body">
+                    <div class="card-title">Scholarshipname</div>
+                    <div class="card-subtitle"></div>
+                    <p class="card-text">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dignissimos reprehenderit, odio recusandae, labore nostrum odit excepturi sunt debitis tempora incidunt facilis nulla officiis quaerat?.</p>
+                    <a href="#" class="card-link">application link</a>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="row justify-content-center">
+            <div class="card" style="width: 18rem; margin-top: 7rem;">
+                <div class="card-body">
+                    <div class="card-title">Scholarshipname</div>
+                    <div class="card-subtitle"></div>
+                    <p class="card-text">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dignissimos reprehenderit, odio recusandae, labore nostrum odit excepturi sunt debitis tempora incidunt facilis nulla officiis quaerat?.</p>
+                    <a href="#" class="card-link">application link</a>
+                </div>
+            </div>
+
+            <div class="card ms-5" style="width: 18rem; margin-top: 7rem;">
+                <div class="card-body">
+                    <div class="card-title">Scholarshipname</div>
+                    <div class="card-subtitle"></div>
+                    <p class="card-text">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dignissimos reprehenderit, odio recusandae, labore nostrum odit excepturi sunt debitis tempora incidunt facilis nulla officiis quaerat?.</p>
+                    <a href="#" class="card-link">application link</a>
+                </div>
+            </div>
+
+            <div class="card ms-5" style="width: 18rem; margin-top: 7rem;">
+                <div class="card-body">
+                    <div class="card-title">Scholarshipname</div>
+                    <div class="card-subtitle"></div>
+                    <p class="card-text">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dignissimos reprehenderit, odio recusandae, labore nostrum odit excepturi sunt debitis tempora incidunt facilis nulla officiis quaerat?.</p>
+                    <a href="#" class="card-link">application link</a>
+                </div>
+            </div>
+        </div>
+
+        -->
+
+    
+
+
+    </div>
+
+
+    {% block footer %}
+    <footer class="text-center bg-body-danger mt-5">
+        <div class="d-flex justify-content-center justify-content-between p-4 border-top  rounded border-bottom mt-5">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-md-3">
+                        <h6 class="text-uppercase fw-bold mb-4">
+                            Our Company
+                          </h6>
+                          <p>
+                            <a href="#!" class="text-reset">Scholarships</a>
+                          </p>
+                          <p>
+                            <a href="#!" class="text-reset">Funding</a>
+                          </p>
+                          <p>
+                            <a href="#!" class="text-reset">Countries</a>
+                          </p>
+                          <p>
+                            <a href="#!" class="text-reset">Stakeholders</a>
+                          </p>
+                    </div>
+
+                    <div class="col-md-3">
+                        <h6 class="text-uppercase fw-bold mb-4">
+                            Social Media
+                          </h6>
+                          <p>
+                            <a href="#!" class="text-reset">Facebook</a>
+                          </p>
+                          <p>
+                            <a href="#!" class="text-reset">Twitter</a>
+                          </p>
+                          <p>
+                            <a href="#!" class="text-reset">LinkedIn</a>
+                          </p>
+                          <p>
+                            <a href="#!" class="text-reset">Instagram</a>
+                          </p>
+                    </div>
+
+
+                    <div class="col-md-3">
+                        <h6 class="text-uppercase fw-bold mb-4">
+                            Afrofinder Blog
+                          </h6>
+                          <p>
+                            <a href="#!" class="text-reset">Trending</a>
+                          </p>
+                          <p>
+                            <a href="#!" class="text-reset">Posts</a>
+                          </p>
+                          <p>
+                            <a href="#!" class="text-reset">FAQS</a>
+                          </p>
+                          <p>
+                            <a href="#!" class="text-reset">Community
+                            </a>
+                          </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </footer>
+    {% endblock %}
+
+    
+    
+</body>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous">
+    document.getElementById("btn").style.backgroundColor = "green";
+</script>
+<script>
+     //document.getElementById("btn").style.backgroundColor = "green";
+        let element = document.querySelectorAll(".card");
+        for (let i = 0; i<element.length; i++){
+            //console.log(element);
+            element[i].addEventListener("click", function(){
+                console.log(element[i].getElementsByTagName("a")[0].getAttribute("href"));
+                window.location = element[i].getElementsByTagName("a")[0].getAttribute("href")
+            });
+        }
+</script>
+</html>

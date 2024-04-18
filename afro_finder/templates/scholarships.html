@@ -1,0 +1,56 @@
+{% extends 'base.html' %}
+
+{% block navigation %}
+   {{ super() }}
+{% endblock %}
+
+{%block body%}
+   <div class="container text-center">
+        <!-- <img src="{{ url_for('static', filename='images/5eda62e047334.jpg') }}" alt="" class="img-fluid " id="tawa"> -->
+
+        <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+         <div class="carousel-inner">
+           <div class="carousel-item active">
+             <img src="{{ url_for('static', filename='images/5eda62e047334.jpg') }}" class="img-fluid" alt="...">
+           </div>
+           <div class="carousel-item">
+             <img src="{{ url_for('static', filename='images/5eda60199f84b.jpg') }}" class="img-fluid" alt="...">
+           </div>
+           <div class="carousel-item">
+             <img src="{{ url_for('static', filename='images/5eda624280490.jpg') }}" class="img-fluid" alt="...">
+           </div>
+         </div>
+         <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+           <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+           <span class="visually-hidden">Previous</span>
+         </button>
+         <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+           <span class="carousel-control-next-icon" aria-hidden="true"></span>
+           <span class="visually-hidden">Next</span>
+         </button>
+       </div>
+   </div>
+
+   <div class="ribbon mt-2" >
+      <div class="container">
+         <div class="row text-center justify-content-between">
+            <a class="col-md-3 display-4" href="#">Countries</a>
+            <a class="col-md-3 display-4" href="#">Programs</a>
+            <a class="col-md-3 display-4" href="#">Grants</a>
+         </div>
+
+         <div class="row text-center mt-4">
+            <div class="ribbon bg-primary  border mx-1 pt-3 pb-3">
+               <div class="col-md-12 text-center">
+                  <b class="display-3"><a class="afrolink" href="homes">Afrofinder</a></b>
+               </div>
+            </div>
+         </div>
+
+      </div>
+   </div>
+{% endblock %}
+
+{% block footer %}
+    {{ super() }}
+{% endblock %}
